@@ -1,102 +1,221 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio de Thumbnails</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio de Thumbnails - André Silva</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+    /* Reset básico */
+    * {
       margin: 0;
       padding: 0;
-      color: #333;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fafafa;
+      color: #222;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
     header {
-      background-color: #111;
-      color: #fff;
-      padding: 2rem 1rem;
+      background-color: #0d1117;
+      color: #f0f6fc;
+      padding: 1.5rem 1rem;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
+
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+      font-weight: 700;
+      font-size: 2rem;
+      letter-spacing: 1px;
     }
-    .container {
-      max-width: 1000px;
-      margin: 2rem auto;
+
+    header p {
+      margin-top: 0.3rem;
+      font-weight: 400;
+      font-size: 1rem;
+      color: #8b949e;
+    }
+
+    main {
+      flex: 1;
+      max-width: 1100px;
+      margin: 2rem auto 3rem;
       padding: 0 1rem;
+      width: 100%;
     }
+
     .intro {
-      font-size: 1.2rem;
+      text-align: center;
       margin-bottom: 2rem;
+      font-size: 1.2rem;
+      color: #444c56;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
+
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
-    .gallery img {
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background-color: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .gallery-item img {
+      display: block;
       width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      height: auto;
+      border-radius: 12px;
     }
-    .contact {
-      margin-top: 3rem;
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      width: 100%;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 0 0 12px 12px;
       text-align: center;
     }
+
+    .gallery-item:hover .gallery-caption {
+      opacity: 1;
+    }
+
+    .contact {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
     .contact a {
       display: inline-block;
-      margin: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      background-color: #111;
-      color: #fff;
+      margin: 0 0.7rem;
+      padding: 0.75rem 2rem;
+      background-color: #238636;
+      color: white;
+      font-weight: 600;
       text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s;
+      border-radius: 25px;
+      box-shadow: 0 4px 6px rgba(35,134,54,0.4);
+      transition: background-color 0.3s ease;
     }
+
     .contact a:hover {
-      background-color: #333;
+      background-color: #2ea043;
+      box-shadow: 0 6px 10px rgba(46,160,67,0.6);
     }
+
     footer {
+      background-color: #f0f6fc;
       text-align: center;
-      font-size: 0.9rem;
       padding: 1rem;
-      background: #eee;
-      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #6e7781;
+      border-top: 1px solid #d0d7de;
+    }
+
+    /* Responsividade */
+    @media (max-width: 400px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+      .gallery {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Portfólio de Thumbnails</h1>
+    <h1>André Silva</h1>
+    <p>Criação de Thumbnails para YouTube - Humor, Podcast & Cultura Pop</p>
   </header>
 
-  <div class="container">
+  <main>
     <p class="intro">
-      Olá! Eu sou um criador de thumbnails para YouTube com foco em vídeos de cortes, humor, podcast e cultura pop. Este portfólio mostra algumas das artes que já produzi. Se quiser trabalhar comigo, é só entrar em contato!
+      Olá! Eu sou um criador de thumbnails para YouTube com foco em vídeos de cortes, humor, podcast e cultura pop. Este portfólio mostra algumas das artes que já produzi. Se quiser trabalhar comigo, entre em contato!
     </p>
 
-    <div class="gallery">
-      <img src="images/thumb1.png" alt="Thumb 1">
-      <img src="images/thumb2.png" alt="Thumb 2">
-      <img src="images/thumb3.png" alt="Thumb 3">
-      <img src="images/thumb4.png" alt="Thumb 4">
-      <img src="images/thumb5.png" alt="Thumb 5">
-      <img src="images/thumb6.png" alt="Thumb 6">
-      <img src="images/thumb7.png" alt="Thumb 7">
-      <img src="images/thumb8.png" alt="Thumb 8">
-      <img src="images/thumb9.png" alt="Thumb 9">
-      <img src="images/thumb10.png" alt="Thumb 10">
-    </div>
+    <section class="gallery" aria-label="Galeria de thumbnails">
+      <article class="gallery-item" tabindex="0">
+        <img src="images/thumb1.png" alt="Thumbnail 1 - Exemplo de corte de vídeo humorístico" />
+        <div class="gallery-caption">Thumbnail para vídeo de humor</div>
+      </article>
+      <article class="gallery-item" tabindex="0">
+        <img src="images/thumb2.png" alt="Thumbnail 2 - Exemplo de podcast" />
+        <div class="gallery-caption">Thumbnail para podcast</div>
+      </article>
+      <article class="gallery-item" tabindex="0">
+        <img src="images/thumb3.png" alt="Thumbnail 3 - Cultura pop" />
+        <div class="gallery-caption">Thumbnail cultura pop</div>
+      </article>
+      <article class="gallery-item" tabindex="0">
+        <img src="images/thumb4.png" alt="Thumbnail 4 - Humor" />
+        <div class="gallery-caption">Vídeo de cortes - humor</div>
+      </article>
+      <article class="gallery-item" tabindex="0">
+        <img src="images/thumb5.png" alt="Thumbnail 5 - Podcast" />
+        <div class="gallery-caption">Podcast</div>
+      </article>
+      <article class="gallery-item" tabindex="0">
+        <img src="images/thumb6.png" alt="Thumbnail 6 - Vídeo cultura pop" />
+        <div class="gallery-caption">Cultura pop</div>
+      </article>
+      <article class="gallery-item" tabindex="0">
+        <img src="images/thumb7.png" alt="Thumbnail 7 - Corte de vídeo" />
+        <div class="gallery-caption">Cortes de vídeo</div>
+      </article>
+      <article class="gallery-item" tabindex="0">
+        <img src="images/thumb8.png" alt="Thumbnail 8 - Humor" />
+        <div class="gallery-caption">Humor</div>
+      </article>
+      <article class="gallery-item" tabindex="0">
+        <img src="images/thumb9.png" alt="Thumbnail 9 - Podcast" />
+        <div class="gallery-caption">Podcast</div>
+      </article>
+      <article class="gallery-item" tabindex="0">
+        <img src="images/thumb10.png" alt="Thumbnail 10 - Cultura pop" />
+        <div class="gallery-caption">Cultura pop</div>
+      </article>
+    </section>
 
     <div class="contact">
-      <a href="mailto:andresilvajob542@gmail.com">📧 Enviar e-mail</a>
+      <a href="mailto:andresilvajob542@gmail.com" aria-label="Enviar email para André Silva">📧 Enviar e-mail</a>
+      <!-- Se quiser, pode adicionar outras redes sociais aqui -->
     </div>
-  </div>
+  </main>
 
   <footer>
-    &copy; 2025 Portfólio de Thumbnails. Criado por André Silva.
+    &copy; 2025 André Silva. Todos os direitos reservados.
   </footer>
 </body>
 </html>
